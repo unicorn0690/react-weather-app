@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Nav from './Nav'
 
-export default class Main extends Component {
-  render() {
+const Main = (props) => {
     return (
     	<div>
-	        <Nav />
-	        <h1>Main Component</h1>
-	        {this.props.children}
+            <Nav />
+            <h1>Main Component</h1>
+            {props.children}
         </div>
     )
-  }
 }
+
+export default Main
