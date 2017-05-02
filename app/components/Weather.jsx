@@ -13,19 +13,18 @@ export default class Weather extends Component {
     }
 
     handleSearch = (location) => {
-        let _this = this
 
-        _this.setState({isLoading: true})
+        this.setState({isLoading: true})
 
-        OpenWeatherMap.getTemp(location).then(function(temp){
-            _this.setState ({
+        OpenWeatherMap.getTemp(location).then((temp) => {
+            this.setState ({
                 location: location,
                 temp: temp,
                 isLoading: false
             })
-        }, function(errorMessage){
+        }, (errorMessage) => {
             alert(errorMessage)
-            _this.setState({isLoading: false})
+            this.setState({isLoading: false})
         })
     }
 
